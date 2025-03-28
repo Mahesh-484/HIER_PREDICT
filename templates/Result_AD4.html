@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(40, 40, 40, 0.9); /* Glassmorphism */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            text-align: center;
+            width: 400px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 18px;
+            color: #cccccc;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .cluster {
+            font-size: 32px;
+            font-weight: bold;
+            color: #00ff00;
+            background-color: rgba(0, 255, 0, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            to {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        /* Button */
+        .back-button {
+            background-color: #555;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 100%;
+        }
+
+        .back-button:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>Your data belongs to cluster:</p>
+        <div class="cluster">{{ cluster }}</div>
+        <br>
+        <button class="back-button" onclick="window.location.href='/home'">Try Again</button>
+    </div>
+
+</body>
+</html>

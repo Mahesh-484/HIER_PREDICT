@@ -19,7 +19,7 @@ app = Flask(__name__)
 def home():
     return render_template('Home_AD4.html')
 
-@app.route('/Result_AD4', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def result():
     try:
         input_features = [float(request.form[key]) for key in request.form.keys()]
